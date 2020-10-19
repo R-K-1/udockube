@@ -1,0 +1,18 @@
+version: "3"
+services:
+  reverseproxy:
+    build:
+      context: .
+    image: rdaf16/reverseproxy
+  backend_user:
+    build:
+      context: ../../udockube-c2-restapi-user
+    image: rdaf16/udockube-restapi-user
+  backend_feed:
+    build:
+      context: ../../udockube-c2-restapi-feed
+    image: rdaf16/udockube-restapi-feed
+  frontend:
+    build:
+      context: ../../udockube-c2-frontend
+    image: rdaf16/udockube-frontend
